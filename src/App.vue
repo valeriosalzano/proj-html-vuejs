@@ -22,7 +22,10 @@ export default {
 </script>
 
 <template>
-
+  <PageHeader></PageHeader>
+  <PageMain></PageMain>
+  
+  <PageFooter></PageFooter>
 </template>
 
 <style lang="scss">

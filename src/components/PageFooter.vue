@@ -1,12 +1,24 @@
 <template>
-  <div class="page-footer">
+  <footer class="page-footer">
+    <div class="footer-top">
+      <CallToAction></CallToAction>
+
+    </div>
+    <div class="footer-bottom">
+
+    </div>
     
-  </div>
+  </footer>
 </template>
 
 <script>
+import CallToAction from './CallToAction.vue';
+
   export default {
-    name: 'Page Footer'
+    name: 'Page Footer',
+    components: {
+      CallToAction,
+    }
   }
 </script>
 
