@@ -9,11 +9,17 @@ export const store = reactive({
       tags: ['men','jackets','jeans'],
       sold: 100,
       img: 'black_elegant_leather_jacket.jpg',
-      reviews:{
-        text: '',
-        author: 'admin',
-        rating: 5
-      }
+      reviews:[
+        {
+          date: 3,
+          author: 'admin',
+          rating: 5
+        },{
+          date: '',
+          author: 'admin',
+          rating: 5
+        }
+      ]
 
     },{
       name: 'hipster black top',
@@ -22,11 +28,9 @@ export const store = reactive({
       tags: ['women','top','hipster'],
       sold: 80,
       img: 'hipster_black_top.jpg',
-      reviews:{
-        text: '',
-        author: '',
-        rating: ''
-      }
+      reviews:[
+        
+      ]
 
     },{
       name: 'black leather suit',
@@ -35,11 +39,9 @@ export const store = reactive({
       tags: ['men','jackets'],
       sold: 40,
       img: 'black_leather_suit.jpg',
-      reviews:{
-        text: '',
-        author: '',
-        rating: ''
-      }
+      reviews:[
+        
+      ]
 
     },{
       name: 'spring printed dress',
@@ -48,24 +50,24 @@ export const store = reactive({
       tags: ['women','dress'],
       sold: 200,
       img: 'spring_printed_dress.jpg',
-      reviews:{
-        text: '',
-        author: 'admin',
-        rating: 5
-      }
+      reviews:[
+        {
+          date: 1,
+          author: 'admin',
+          rating: 5
+        }
+      ]
 
     },{
       name: 'modern love tee',
       price: 30,
-      discount: 5, 
+      discount: '', 
       tags: ['women','modern'],
       sold: 150,
       img: 'modern_love_tee.jpg',
-      reviews:{
-        text: '',
-        author: '',
-        rating: ''
-      }
+      reviews:[
+        
+      ]
 
     },{
       name: 'blue jacket & stripe tee',
@@ -74,11 +76,9 @@ export const store = reactive({
       tags: ['men','jackets','suits'],
       sold: 50,
       img: 'blue_jacket_and_white_stripe_tee.jpg',
-      reviews:{
-        text: '',
-        author: '',
-        rating: ''
-      }
+      reviews:[
+        
+      ]
 
     },{
       name: 'modern black leather suit',
@@ -87,11 +87,9 @@ export const store = reactive({
       tags: ['men','jackets'],
       sold: 20,
       img: 'modern_black_leather_suit.jpg',
-      reviews:{
-        text: '',
-        author: '',
-        rating: ''
-      }
+      reviews:[
+        
+      ]
 
     },{
       name: 'black leather jacket',
@@ -100,11 +98,9 @@ export const store = reactive({
       tags: ['women','jackets'],
       sold: 130,
       img: 'black_leather_jacket.jpg',
-      reviews:{
-        text: '',
-        author: '',
-        rating: ''
-      }
+      reviews:[
+        
+      ]
 
     },{
       name: 'blue leather jacket',
@@ -113,11 +109,9 @@ export const store = reactive({
       tags: ['men','jackets'],
       sold: 20,
       img: 'blue_leather_jacket.jpg',
-      reviews:{
-        text: '',
-        author: '',
-        rating: ''
-      }
+      reviews:[
+        
+      ]
 
     },{
       name: 'modern leather boots',
@@ -126,11 +120,9 @@ export const store = reactive({
       tags: ['shoes','accessories'],
       sold: 20,
       img: 'modern_leather_boots.jpg',
-      reviews:{
-        text: '',
-        author: '',
-        rating: ''
-      }
+      reviews:[
+        
+      ]
 
     },{
       name: 'leather belts',
@@ -139,11 +131,9 @@ export const store = reactive({
       tags: ['accessories'],
       sold: 20,
       img: 'casual_leather_belts.jpg',
-      reviews:{
-        text: '',
-        author: '',
-        rating: ''
-      }
+      reviews:[
+        
+      ]
 
     },{
       name: 'brown dress shoes',
@@ -152,11 +142,9 @@ export const store = reactive({
       tags: ['accessories'],
       sold: 20,
       img: 'brown_dress_shoes.jpg',
-      reviews:{
-        text: '',
-        author: '',
-        rating: ''
-      }
+      reviews:[
+        
+      ]
 
     },{
       name: 'leather gloves',
@@ -165,11 +153,21 @@ export const store = reactive({
       tags: ['accessories','gloves'],
       sold: 20,
       img: 'leather_gloves.jpg',
-      reviews:{
-        text: '',
-        author: 'Beardman',
-        rating: 5
-      }
+      reviews:[
+        {
+          date: 2,
+          author: 'Beardman',
+          rating: 5
+        },{
+          date: '',
+          author: '',
+          rating: 5
+        },{
+          date: '',
+          author: '',
+          rating: 5
+        }
+      ]
 
     },
   ],

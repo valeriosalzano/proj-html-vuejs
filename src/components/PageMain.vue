@@ -84,8 +84,13 @@
     </section>
 
     <div class="main-bottom">
-      <section id="products-lists">
-
+      <section id="products-lists" class="container">
+        <div v-for="list in productsListsData">
+          <h1>{{ list.title}}</h1>
+          <ul>
+            <li v-for="product in list.elements"><ProductCard :product="product" :compact="true"></ProductCard></li>
+          </ul>
+        </div>
       </section>
       <BrandsList></BrandsList>
     </div>
@@ -131,7 +136,7 @@
             subtitle: 'rich and colorful',
             img: 'autumn_collection_bg.jpg'
           },
-        ]
+        ],
       }
     },
     props: {
@@ -153,7 +158,45 @@
         let sortedArray = [...this.products];
         sortedArray.sort((a,b) => b.sold - a.sold);
         return sortedArray.slice(0,5);
-      }
+      },
+      getDiscountedProducts(){
+        let discountedProducts = [];
+        this.products.forEach(product => {
+          if(product.discount){
+            discountedProducts.push(product)
+            }
+        });
+        return discountedProducts;
+      },
+      getTopRated(){
+        let sortedArray = [...this.products];
+        sortedArray.sort((a,b) => b.reviews.length - a.reviews.length);
+        return sortedArray;
+      },
+      getLatestReviews(){
+        let sortedArray = [...this.products].filter(product => product.reviews.length);
+        sortedArray.sort((a,b) => {
+          b.reviews[0].date - a.reviews[0].date
+          });
+        return sortedArray;
+      },
+      productsListsData(){
+        return [
+          {
+            title: 'featured',
+            elements: this.getBestSellers.slice(2,5),
+          },{
+            title: 'on sale',
+            elements: this.getDiscountedProducts.slice(0,3),
+          },{
+            title: 'top rated',
+            elements: this.getTopRated.slice(0,3),
+          },{
+            title: 'latest reviews',
+            elements: this.getLatestReviews.slice(0,3),
+          }
+        ]
+      } 
     },
     methods: {
       setCategory(category){
@@ -241,6 +284,22 @@
         width: 100%;
       }
     }
+  }
+}
+.main-bottom {
+  border-top: 1px solid $gray-line;
+}
+#products-lists {
+  display: flex;
+  &>div{
+    flex-grow: 1;
+  }
+  h1 {
+    text-transform: uppercase;
+  }
+  li {
+    margin: 0 0.5rem;
+    border-bottom: 1px solid $gray-line;
   }
 }
 </style>
