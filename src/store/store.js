@@ -7,7 +7,7 @@ export const store = reactive({
       price: 235,
       discount: 35, 
       tags: ['men','jackets','jeans'],
-      sold: 30,
+      sold: 100,
       img: 'black_elegant_leather_jacket.jpg',
       reviews:{
         text: '',
@@ -33,7 +33,7 @@ export const store = reactive({
       price: 580,
       discount: '', 
       tags: ['men','jackets','suits'],
-      sold: 100,
+      sold: 50,
       img: 'blue_jacket_and_white_stripe_tee.jpg',
       reviews:{
         text: '',
@@ -72,7 +72,7 @@ export const store = reactive({
       price: 30,
       discount: 5, 
       tags: ['women','modern'],
-      sold: 25,
+      sold: 150,
       img: 'modern_love_tee.jpg',
       reviews:{
         text: '',
@@ -85,7 +85,7 @@ export const store = reactive({
       price: 125,
       discount: '', 
       tags: ['women','jackets'],
-      sold: 60,
+      sold: 130,
       img: 'black_leather_jacket.jpg',
       reviews:{
         text: '',
@@ -98,7 +98,7 @@ export const store = reactive({
       price: 57,
       discount: '', 
       tags: ['women','top','hipster'],
-      sold: 35,
+      sold: 80,
       img: 'hipster_black_top.jpg',
       reviews:{
         text: '',

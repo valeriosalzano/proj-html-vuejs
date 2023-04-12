@@ -3,11 +3,11 @@
     <MainJumbotron></MainJumbotron>
 
     <section id="featured-products">
-      <SectionTitle>
-        <template #default>Featured Products</template>
-        <template #subtitle>Must have products from our top sellers</template>
-      </SectionTitle>
       <div class="container">
+        <SectionTitle>
+          <template #default>Featured Products</template>
+          <template #subtitle>Must have products from our top sellers</template>
+        </SectionTitle>
         <div class="categories-filter">
           <div v-for="category in featuredCategories" @click="setCategory(category)" :key="category">{{ category }}</div>
         </div>
@@ -26,7 +26,13 @@
     </section>
 
     <section id="best-sellers">
-
+      <div class="container">
+        <SectionTitle>
+          <template #default>Best Seller</template>
+          <template #subtitle>Must have products from our top sellers</template>
+        </SectionTitle>
+        <OneSlider :products="getBestSellers"></OneSlider>
+      </div>
     </section>
 
     <section id="pricing">
@@ -63,6 +69,7 @@
   import CallToAction from './CallToAction.vue';
   import OneButton from './OneButton.vue';
   import ProductCard from './ProductCard.vue';
+  import OneSlider from './OneSlider.vue'
 
   export default {
     name: 'Page Main',
@@ -73,6 +80,7 @@
     CallToAction,
     OneButton,
     ProductCard,
+    OneSlider,
 },
     data() {
       return {
@@ -107,6 +115,11 @@
             }
         });
         return filteredProducts;
+      },
+      getBestSellers(){
+        let sortedArray = this.products;
+        sortedArray.sort((a,b) => b.sold - a.sold);
+        return sortedArray.slice(0,5);
       }
     },
     methods: {
@@ -115,7 +128,7 @@
       },
       getImgPath(img){
       return new URL (`../assets/images/${img}`,import.meta.url).href;
-    },
+      },
     }
   }
 </script>

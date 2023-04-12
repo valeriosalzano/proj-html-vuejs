@@ -1,5 +1,5 @@
 <template>
-  <div class="section-title container">
+  <div class="section-title">
     <h2><slot> </slot></h2>
     <h3><slot name="subtitle" ></slot> </h3>
   </div>
