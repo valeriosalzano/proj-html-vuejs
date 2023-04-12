@@ -35,8 +35,21 @@
       </div>
     </section>
 
-    <section id="pricing">
-
+    <section id="promo">
+      <div class="bg-wrapper">
+        <div class="container">
+          <div class="promo-1">
+            <h3>70% Off</h3>
+            <p>Vivamus tempor leo lacus, feugiat ut magna aliquam erat.</p>
+            <OneButton class="transparent">VIEW MORE</OneButton>
+          </div>
+          <div class="promo-2">
+            <h3>Free Shipping</h3>
+            <p>Vivamus tempor leo lacus, feugiat ut magna aliquam erat.</p>
+            <OneButton class="transparent">VIEW MORE</OneButton>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="new-arrivals">
@@ -147,7 +160,6 @@
       text-transform: capitalize;
     }
   }
-
   .featured-cards {
     display: flex;
     &> *{
@@ -170,6 +182,30 @@
   }
   h3 {
     text-transform: uppercase;
+  }
+}
+#promo {
+  padding: 90px 0;
+  background-color: #f4f8f9;
+  .bg-wrapper {
+    background: url("../assets/images/bkgd_confetti-compressor.jpg") center;
+    background-size: 180%;
+  }
+  .promo-1, .promo-2 {
+    display: inline-block;
+    width: calc(50% - 2rem);
+    aspect-ratio: 560/370;
+    background-size: cover;
+    background-position: center;
+    color: $promo-text;
+    padding: 100px 20% 0 60px ;
+  }
+  .promo-1{
+    background-image: url("../assets/images/promo_box_1_bg.jpg");
+    margin-right: 2rem;
+  }
+  .promo-2{
+    background-image: url("../assets/images/promo_box_2_bg.jpg");
   }
 }
 </style>
