@@ -12,7 +12,7 @@
 
       <div class="right-side">
         <NavBar :navData="pageNavBar"></NavBar>
-        <OneButton></OneButton>
+        <OneButton class="blue">SHOP NOW!</OneButton>
         <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
       </div>
 
@@ -54,7 +54,7 @@ import OneButton from './OneButton.vue';
             dropdown: [],
           },
           {
-            text: 'Shope',
+            text: 'Shop',
             dropdown: [],
           },
           {
@@ -83,6 +83,11 @@ import OneButton from './OneButton.vue';
 .header-bottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.header-bottom .right-side {
+  display: flex;
   align-items: center;
 }
 </style>

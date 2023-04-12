@@ -14,5 +14,7 @@
 </script>
 
 <style lang="scss" scoped>
-  
+i:not(:first-of-type) {
+  margin-left: 1rem;
+}
 </style>
