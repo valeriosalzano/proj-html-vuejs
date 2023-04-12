@@ -53,7 +53,13 @@
     </section>
 
     <section id="new-arrivals">
-
+      <div class="container">
+        <SectionTitle>
+          <template #default>New Arrivals</template>
+          <template #subtitle>Brand new products from top designers</template>
+        </SectionTitle>
+      </div>
+      <OneSlider :products="products.slice(0,5)"></OneSlider>
     </section>
 
     <section id="testimonials">
@@ -130,7 +136,7 @@
         return filteredProducts;
       },
       getBestSellers(){
-        let sortedArray = this.products;
+        let sortedArray = [...this.products];
         sortedArray.sort((a,b) => b.sold - a.sold);
         return sortedArray.slice(0,5);
       }

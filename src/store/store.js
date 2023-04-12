@@ -16,38 +16,25 @@ export const store = reactive({
       }
 
     },{
+      name: 'hipster black top',
+      price: 57,
+      discount: '', 
+      tags: ['women','top','hipster'],
+      sold: 80,
+      img: 'hipster_black_top.jpg',
+      reviews:{
+        text: '',
+        author: '',
+        rating: ''
+      }
+
+    },{
       name: 'black leather suit',
       price: 176,
       discount: '', 
       tags: ['men','jackets'],
       sold: 40,
       img: 'black_leather_suit.jpg',
-      reviews:{
-        text: '',
-        author: '',
-        rating: ''
-      }
-
-    },{
-      name: 'blue jacket & stripe tee',
-      price: 580,
-      discount: '', 
-      tags: ['men','jackets','suits'],
-      sold: 50,
-      img: 'blue_jacket_and_white_stripe_tee.jpg',
-      reviews:{
-        text: '',
-        author: '',
-        rating: ''
-      }
-
-    },{
-      name: 'modern black leather suit',
-      price: 96,
-      discount: '', 
-      tags: ['men','jackets'],
-      sold: 20,
-      img: 'modern_black_leather_suit.jpg',
       reviews:{
         text: '',
         author: '',
@@ -81,12 +68,12 @@ export const store = reactive({
       }
 
     },{
-      name: 'black leather jacket',
-      price: 125,
+      name: 'blue jacket & stripe tee',
+      price: 580,
       discount: '', 
-      tags: ['women','jackets'],
-      sold: 130,
-      img: 'black_leather_jacket.jpg',
+      tags: ['men','jackets','suits'],
+      sold: 50,
+      img: 'blue_jacket_and_white_stripe_tee.jpg',
       reviews:{
         text: '',
         author: '',
@@ -94,12 +81,25 @@ export const store = reactive({
       }
 
     },{
-      name: 'hipster black top',
-      price: 57,
+      name: 'modern black leather suit',
+      price: 96,
       discount: '', 
-      tags: ['women','top','hipster'],
-      sold: 80,
-      img: 'hipster_black_top.jpg',
+      tags: ['men','jackets'],
+      sold: 20,
+      img: 'modern_black_leather_suit.jpg',
+      reviews:{
+        text: '',
+        author: '',
+        rating: ''
+      }
+
+    },{
+      name: 'black leather jacket',
+      price: 125,
+      discount: '', 
+      tags: ['women','jackets'],
+      sold: 130,
+      img: 'black_leather_jacket.jpg',
       reviews:{
         text: '',
         author: '',
