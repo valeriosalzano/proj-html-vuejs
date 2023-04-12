@@ -88,7 +88,6 @@
 
       </section>
       <BrandsList></BrandsList>
-
     </div>
     
   </main>
