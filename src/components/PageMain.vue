@@ -63,7 +63,7 @@
     </section>
 
     <section id="testimonials">
-
+      <OneSlider :people="people"></OneSlider>
     </section>
     
     <section id="blog">
@@ -124,6 +124,7 @@
     },
     props: {
       products: Array,
+      people: Array,
     },
     computed: {
       getFeaturedProducts(){
@@ -213,5 +214,8 @@
   .promo-2{
     background-image: url("../assets/images/promo_box_2_bg.jpg");
   }
+}
+#testimonials {
+  color: $testimonials-text;
 }
 </style>

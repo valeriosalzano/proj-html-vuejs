@@ -23,7 +23,10 @@ export default {
 
 <template>
   <PageHeader></PageHeader>
-  <PageMain :products="store.productsData"></PageMain>
+  <PageMain
+    :products="store.productsData"
+    :people="store.testimonialsData">
+  </PageMain>
   
   <PageFooter></PageFooter>
 </template>

@@ -172,5 +172,18 @@ export const store = reactive({
       }
 
     },
+  ],
+  testimonialsData: [
+    {
+      name: 'Darío Pineda',
+      company: 'Theme Fusion',
+      text: 'Curabitur non tristique tortor. Vestibulum aliquet suscipit ipsum in volutpat. Donec vel lacinia sem, vitae semper nulla. In hac habitasse platea dictumst. Mauris consectetur est et nibh sadip hendrerit bibendum.',
+      img: 'man_testimonial.png',
+    },{
+      name: 'Cersei Lannister',
+      company: 'Casterly Rock',
+      text: 'Curabitur non tristique tortor. Vestibulum aliquet suscipit ipsum in volutpat. Donec vel lacinia sem, vitae semper nulla. In hac habitasse platea dictumst. Mauris consectetur est et nibh sadip hendrerit bibendum.',
+      img: 'woman_testimonial.png',
+    }
   ]
 })
