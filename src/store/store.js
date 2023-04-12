@@ -185,5 +185,26 @@ export const store = reactive({
       text: 'Curabitur non tristique tortor. Vestibulum aliquet suscipit ipsum in volutpat. Donec vel lacinia sem, vitae semper nulla. In hac habitasse platea dictumst. Mauris consectetur est et nibh sadip hendrerit bibendum.',
       img: 'woman_testimonial.png',
     }
+  ],
+  blogData: [
+    {
+      title: 'Aenean lobortis sapien enim viverra',
+      date: 'September 9th, 2015',
+      comments: 0,
+      text: 'Donec finibus sit amet orci eget ultricies. Praesent posuere ante ut erat fringilla,',
+      img: 'post_img_12-700x441.jpg'
+    },{
+      title: 'Duis ac massa semper maximus',
+      date: 'September 9th, 2015',
+      comments: 0,
+      text: 'Donec finibus sit amet orci eget ultricies. Praesent posuere ante ut erat fringilla,',
+      img: 'post_img_11-700x441.jpg'
+    },{
+      title: 'Nunc fermint nulla eu justo sem id',
+      date: 'September 9th, 2015',
+      comments: 0,
+      text: 'Donec finibus sit amet orci eget ultricies. Praesent posuere ante ut erat fringilla,',
+      img: 'post_img_10-700x441.jpg'
+    },
   ]
 })

@@ -25,7 +25,8 @@ export default {
   <PageHeader></PageHeader>
   <PageMain
     :products="store.productsData"
-    :people="store.testimonialsData">
+    :people="store.testimonialsData"
+    :posts="store.blogData">
   </PageMain>
   
   <PageFooter></PageFooter>

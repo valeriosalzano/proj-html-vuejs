@@ -67,7 +67,20 @@
     </section>
     
     <section id="blog">
-
+      <div class="container">
+        <SectionTitle>
+          <template #default>From Our blog</template>
+          <template #subtitle>The latest Classic Shop news</template>
+        </SectionTitle>
+        <div class="post-list">
+          <div v-for="post in posts" class="post">
+            <img :src="getImgPath(post.img)" alt="image from our blog">
+            <h2>{{ post.title }}</h2>
+            <p class="post-infos">{{ post.date }} | {{ post.comments }} Comments</p>
+            <p>{{ post.text }}</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <div class="main-bottom">
@@ -125,6 +138,7 @@
     props: {
       products: Array,
       people: Array,
+      posts: Array,
     },
     computed: {
       getFeaturedProducts(){
@@ -217,5 +231,17 @@
 }
 #testimonials {
   color: $testimonials-text;
+}
+#blog {
+  .post-list{
+    display: flex;
+    justify-content: space-between;
+    .post {
+      width: calc(100% / 3 - 20px);
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 </style>

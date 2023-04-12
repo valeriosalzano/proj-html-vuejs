@@ -12,7 +12,7 @@
     <div class="quote-container">
       <img :src="getImgPath(people[personShowing].img)" :alt="people[personShowing].name">
       <p>{{ people[personShowing].text }}</p>
-      <p><strong>{{ people[personShowing].name }},</strong>{{ people[personShowing].company }}</p>
+      <p><strong>{{ people[personShowing].name }},</strong> {{ people[personShowing].company }}</p>
       <div>
         <i v-for="(person,index) in people" class="fa-circle" :class="index==personShowing?'fa-solid':'fa-regular'" :key="index" @click="personShowing=index"></i>
       </div>
@@ -67,6 +67,7 @@
 .one-slider.people {
   background: url("../assets/images/testimonials_home_1_bg.jpg") center;
   padding-top: 150px;
+  text-align: center;
   .quote-container{
     background: url("../assets/images/testimonials_home_1_bg.jpg") center;
     position: relative;
