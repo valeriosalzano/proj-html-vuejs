@@ -182,7 +182,7 @@ export const store = reactive({
     },{
       name: 'Cersei Lannister',
       company: 'Casterly Rock',
-      text: 'Curabitur non tristique tortor. Vestibulum aliquet suscipit ipsum in volutpat. Donec vel lacinia sem, vitae semper nulla. In hac habitasse platea dictumst. Mauris consectetur est et nibh sadip hendrerit bibendum.',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet libero dolore culpa, quas magnam laboriosam exercitationem quos qui quasi, asperiores optio eaque id vel officiis perspiciatis vitae porro quam recusandae?',
       img: 'woman_testimonial.png',
     }
   ],
