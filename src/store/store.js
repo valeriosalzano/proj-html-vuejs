@@ -92,7 +92,7 @@ export const store = reactive({
       ]
 
     },{
-      name: 'black leather jacket',
+      name: 'black jacket',
       price: 125,
       discount: '', 
       tags: ['women','jackets'],

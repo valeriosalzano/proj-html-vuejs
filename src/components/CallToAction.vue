@@ -39,8 +39,14 @@ import OneButton from './OneButton.vue';
       .input-group {
         margin-left: 2rem;
         input {
+          min-width: 280px;
           border-radius: 1rem;
-          padding: 0.5rem 3rem;
+          padding: 0.6rem;
+          border: none;
+          &::placeholder{
+            color: $cta-icon;
+            font-size: 0.8rem;
+          }
         }
         .btn {
           padding: 0.5rem 3rem;

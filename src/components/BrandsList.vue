@@ -51,9 +51,20 @@
 </script>
 
 <style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
 .brands{
   text-align: center;
   background-color: #f6f6f6;
+  padding: 70px 0;
+  
+  h1{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: $brands-title;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+  }
   .brands-list{
     display: flex;
     justify-content: space-between;

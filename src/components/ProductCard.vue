@@ -6,11 +6,11 @@
     <div class="product-infos">
       <h3>{{ product.name }}</h3>
       <h5 v-if="!compact" class="tags">{{ product.tags.join(', ') }}</h5>
-      <div v-if="compact && product.reviews.length" v-show="getAverageRating(product)" class="stars"><i v-for="n in 5" class="fa-star" :class="n <= Math.ceil(getAverageRating(product))? 'fa-solid':'fa-regular'"></i></div>
-      <div class="price">
-        <span class="original-price" :class="product.discount? 'erased' : ''"> ${{ product.price }} </span>
-        <span class="discounted-price" v-if="product.discount"> ${{ product.price - product.discount }} </span>
+      <div v-if="compact && product.reviews.length" v-show="getAverageRating(product)" class="stars">
+        <i v-for="n in 5" class="fa-star" :class="n <= Math.ceil(getAverageRating(product))? 'fa-solid':'fa-regular'"></i>
       </div>
+      <span class="original-price" :class="product.discount? 'erased' : ''"> ${{ product.price }} </span>
+      <span class="discounted-price" v-if="product.discount"> ${{ product.price - product.discount }} </span>
     </div>
   </div>
 </template>
@@ -55,13 +55,15 @@ h5 {
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
 }
-.price {
+.original-price, .discounted-price {
   color: $featured-price;
   font-size: 1.2rem;
   font-family: serif;
   font-weight: 500;
 }
-
+.stars {
+  color: $card-stars;
+}
 .original-price.erased{
   position: relative;
   font-size: 0.9rem;
@@ -90,16 +92,34 @@ h5 {
   display: flex;
   flex-direction: row-reverse;
   height: 100px;
-  padding: 10px;
+  padding: 0.5rem 0;
+  margin: 0 1.2rem;
+  border-bottom: 1px solid $light-gray-line;
   .img-container {
-    max-width: 80px;
+    height: 100%;
+    aspect-ratio: 62/80;
     img {
     height: 100%;
     }
   }
   .product-infos{
     width: 100%;
-
+    color: $card-dark-text ;
+    h3 {
+      display: inline-block;
+      font-weight: 300;
+      font-size: 1.1rem;
+      margin: 0 0.25rem 0.5rem 0;
+    }
+    .stars {
+      margin-bottom: 0.5rem;
+    }
+    .original-price, .discounted-price {
+      color: $card-dark-text ;
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
     .discounted-price {
       text-decoration: underline;
     }

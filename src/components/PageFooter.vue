@@ -1,34 +1,36 @@
 <template>
   <footer class="page-footer">
     <CallToAction></CallToAction>
-    <div class="footer-top container">
-      <div>
-        <img src="../assets/images/classic_shop_logo2x.png" alt="shop logo">
-        <p>12345 North Main Stree,</p>
-        <p>New York, NY 555555</p>
-        <p>Phone: 1.800.555.6789</p>
-        <p>Email: info@company.com</p>
-        <p>Web: Theme-fusion.com</p>
-        <SocialsList></SocialsList>
-      </div>
-      <div>
-        <h3>top rated products</h3>
-        <ul>
-          <li v-for="product in getTopRated.slice(0,3)">
-            <ProductCard :product="product" :compact="true" ></ProductCard>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3>recent posts</h3>
-        <ul>
-          <li v-for="post in posts">
-            <i class="fa-solid fa-chevron-right"></i> {{ post.title }}
-          </li>
-        </ul>
-      </div>
-      <div class="tags">
-        <span v-for="tag in tags">{{ tag }}</span>
+    <div class="footer-top">
+      <div class="container">
+        <div class="col">
+          <img src="../assets/images/classic_shop_logo2x.png" alt="shop logo">
+          <p>12345 North Main Stree,</p>
+          <p>New York, NY 555555</p>
+          <p>Phone: 1.800.555.6789</p>
+          <p>Email: info@company.com</p>
+          <p>Web: Theme-fusion.com</p>
+          <SocialsList></SocialsList>
+        </div>
+        <div class="col">
+          <h3>top rated products</h3>
+          <ul>
+            <li v-for="product in getTopRated.slice(0,3)">
+              <ProductCard :product="product" :compact="true" ></ProductCard>
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>recent posts</h3>
+          <ul>
+            <li v-for="post in posts">
+              <i class="fa-solid fa-chevron-right"></i> {{ post.title }}
+            </li>
+          </ul>
+        </div>
+        <div class="tags col">
+          <span v-for="tag in tags"> {{ tag }} </span> 
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -54,27 +56,27 @@ import ProductCard from './ProductCard.vue';
     data() {
       return {
         tags: [
-        'Black',
-        'hat',
-        'boots',
-        'Fabric',
-        'Hipster',
-        'Brown',
-        'flowers',
-        'lines',
-        'Casual',
-        'Grey',
-        'multi-purpose',
-        'Outdoors',
-        'red',
-        'New York',
-        'responsive',
-        'summer',
-        'sweater',
-        'Travel',
-        'Warm',
-        'White',
-        'winter',
+        'Black ',
+        'hat ',
+        'boots ',
+        'Fabric ',
+        'Hipster ',
+        'Brown ',
+        'flowers ',
+        'lines ',
+        'Casual ',
+        'Grey ',
+        'multi-purpose ',
+        'Outdoors ',
+        'red ',
+        'New York ',
+        'responsive ',
+        'summer ',
+        'sweater ',
+        'Travel ',
+        'Warm ',
+        'White ',
+        'winter ',
         ]
       }
     },
@@ -95,7 +97,13 @@ import ProductCard from './ProductCard.vue';
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
 .footer-top {
-  display: flex;
+  background-color: $footer-primary ;
+  .container {
+    display: flex;
+    .col {
+      width: calc(100% / 4 - 1rem);
+    }
+  }
 }
 .footer-bottom {
   text-align: center;

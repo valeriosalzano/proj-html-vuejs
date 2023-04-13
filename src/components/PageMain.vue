@@ -84,12 +84,14 @@
     </section>
 
     <div class="main-bottom">
-      <section id="products-lists" class="container">
-        <div v-for="list in productsListsData">
-          <h1>{{ list.title}}</h1>
-          <ul>
-            <li v-for="product in list.elements"><ProductCard :product="product" :compact="true"></ProductCard></li>
-          </ul>
+      <section id="products-lists">
+        <div class="container">
+          <div v-for="list in productsListsData" class="list">
+            <h1>{{ list.title}}</h1>
+            <ul>
+              <li v-for="product in list.elements"><ProductCard :product="product" :compact="true"></ProductCard></li>
+            </ul>
+          </div>
         </div>
       </section>
       <BrandsList></BrandsList>
@@ -133,7 +135,7 @@
             img: 'spring_collection_bg.jpg'
           },{
             title: 'autumn',
-            subtitle: 'rich and colorful',
+            subtitle: 'rich and comfortable',
             img: 'autumn_collection_bg.jpg'
           },
         ],
@@ -176,7 +178,7 @@
       getLatestReviews(){
         let sortedArray = [...this.products].filter(product => product.reviews.length);
         sortedArray.sort((a,b) => {
-          b.reviews[0].date - a.reviews[0].date
+          return b.reviews[0].date - a.reviews[0].date
           });
         return sortedArray;
       },
@@ -253,11 +255,16 @@ section.spaced {
     background-size: cover;
   }
   h2 {
-    margin-top: 70%;
+    font-size: 3rem;
+    margin-top: 60%;
+    margin-bottom: 1rem;
     text-transform: capitalize;
   }
   h3 {
     text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 2rem;
   }
 }
 #promo {
@@ -274,7 +281,17 @@ section.spaced {
     background-size: cover;
     background-position: center;
     color: $promo-text;
-    padding: 100px 20% 0 60px ;
+    padding: 100px 50px ;
+    h3 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    p{
+      width: 55%;
+      line-height: 1.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
   }
   .promo-1{
     background-image: url("../assets/images/promo_box_1_bg.jpg");
@@ -295,24 +312,46 @@ section.spaced {
       width: calc(100% / 3 - 20px);
       img {
         width: 100%;
+        margin-bottom: 0.5rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+        color: $blog-title;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        color: $blog-text;
+        line-height: 1.8rem;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        &.post-infos{
+          font-size: 0.85rem;
+          letter-spacing: 0.5px;
+          margin-bottom: 1rem;
+        }
       }
     }
   }
 }
 .main-bottom {
-  border-top: 1px solid $gray-line;
+  border-top: 2px solid $light-gray-line;
+  padding-top: 60px;
 }
-#products-lists {
+#products-lists .container {
+  width: 100%;
   display: flex;
-  &>div{
-    flex-grow: 1;
+  margin-bottom: 65px;
+  .list {
+    width: calc(100% / 4)
   }
+
   h1 {
     text-transform: uppercase;
-  }
-  li {
-    margin: 0 0.5rem;
-    border-bottom: 1px solid $gray-line;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
   }
 }
 </style>

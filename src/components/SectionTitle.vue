@@ -41,5 +41,6 @@ h3 {
     font-weight: 400;
     font-size: 1.1rem;
     color: $section-subtitle;
+    letter-spacing: 1px;
   }
 </style>
