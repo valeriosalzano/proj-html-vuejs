@@ -4,6 +4,7 @@
     <span class="arrow left"><i class="fa-solid fa-chevron-left"></i></span>
     <div v-for="product in products" class="img-container" :key="product.name">
       <img :src="getImgPath(product.img)" :alt="product.name">
+      <ImgHover :product="product"></ImgHover>
     </div>
     <span class="arrow right"><i class="fa-solid fa-chevron-right"></i></span>
   </div>
@@ -21,8 +22,13 @@
 </template>
 
 <script>
+import ImgHover from './ImgHover.vue';
+
   export default {
     name: 'One Slider',
+    components: {
+    ImgHover
+},
     props: {
       products: Array,
       people: Array,
@@ -47,6 +53,7 @@
   width: 100%;
   display: flex;
   .img-container{
+    position: relative;
     width: 20%;
     img {
       object-fit: cover;
@@ -54,6 +61,7 @@
     }
   }
   .arrow {
+    cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -61,6 +69,7 @@
     background-color: $slider-arrow-bg;
     color: $slider-arrow-color;
     font-size: 0.6rem;
+    z-index: 9;
     &.left {
       left: 0;
     }
@@ -102,6 +111,7 @@
     .dots {
       font-size: 0.8rem;
       i{
+        cursor: pointer;
         margin: 0 0.3rem;
       }
     }

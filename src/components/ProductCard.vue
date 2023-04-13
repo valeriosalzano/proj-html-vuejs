@@ -2,6 +2,7 @@
   <div class="product-card" :class="compact? 'compact':'large'">
     <div class="img-container">
       <img :src="getImgPath(product.img)" :alt="product.name">
+      <ImgHover v-if="!compact" :product="product"></ImgHover>
     </div>
     <div class="product-infos">
       <h3>{{ product.name }}</h3>
@@ -17,8 +18,13 @@
 </template>
 
 <script>
+import ImgHover from './ImgHover.vue';
+
   export default {
     name: 'Product Card',
+    components: {
+      ImgHover,
+    },
     props: {
     product: Object,
     compact: Boolean,
@@ -82,6 +88,7 @@ h5 {
 }
 .product-card.large {
   .img-container {
+    position: relative;
     margin-bottom: 1rem;
     img {
       object-fit: cover;

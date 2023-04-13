@@ -22,6 +22,8 @@ button {
   font-weight: 600;
   font-family: serif;
   font-size: 0.9rem;
+  transition: background-color 0.25s;
+  cursor: pointer;
 
   &.big {
     padding: 1rem 2.5rem;
@@ -31,11 +33,20 @@ button {
   &.blue {
     background-color: $btn-blue-bg;
     color: $btn-blue-text;
+    &:hover{
+      background-color: $btn-blue-hover-bg;
+    }
   }
   &.transparent {
     background-color: $btn-transparent-bg;
     color: $btn-transparent-text;
     border: 2px solid $btn-transparent-border;
+    &:hover{
+      background-color: $btn-transparent-text;
+      color: black;
+      mix-blend-mode: lighten;
+      -webkit-text-stroke: 1px gray;
+    }
   }
 }
 </style>

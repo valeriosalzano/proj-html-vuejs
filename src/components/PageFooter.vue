@@ -32,7 +32,7 @@
         </div>
         <div class="col tags">
           <h3> tags </h3>
-          <span v-for="tag in tags"> {{ tag }} </span> 
+          <span v-for="tag in sortedTags"> {{ tag }} </span> 
         </div>
       </div>
     </div>
@@ -62,6 +62,7 @@ import ProductCard from './ProductCard.vue';
         'Black ',
         'hat ',
         'boots ',
+        'D&G ',
         'Fabric ',
         'Hipster ',
         'Brown ',
@@ -93,6 +94,22 @@ import ProductCard from './ProductCard.vue';
         sortedArray.sort((a,b) => b.reviews.length - a.reviews.length);
         return sortedArray;
       },
+      sortedTags(){
+        let sorted = this.tags.sort((a,b)=> {
+          let fa = a.toLowerCase();
+          let fb = b.toLowerCase();
+          console.log(fa,fb)
+
+          if (fa < fb){
+            return -1
+          }
+          if (fa > fb){
+            return 1
+          }
+          return 0
+        })
+        return sorted;
+      }
     }
   }
 </script>
@@ -134,7 +151,9 @@ import ProductCard from './ProductCard.vue';
       }
     }
     .tags {
+      padding-right: 1rem;
       span {
+        font-size: 1rem;
         display: inline-block;
         padding: 0.5rem;
         margin: 0.1rem;
@@ -144,7 +163,13 @@ import ProductCard from './ProductCard.vue';
   }
 }
 .footer-bottom {
+  padding: 2rem 0 0.5rem;
   text-align: center;
   background-color: $footer-primary-dark;
+  p {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
 }
 </style>
