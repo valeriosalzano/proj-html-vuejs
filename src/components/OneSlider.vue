@@ -86,11 +86,13 @@ import ImgHover from './ImgHover.vue';
 // TESTIMONIALS VERSION STYLE
 .one-slider.people {
   background: url("../assets/images/testimonials_home_1_bg.jpg") center;
+  background-size: cover;
   background-position-y: -350px ;
   padding-top: 160px;
   text-align: center;
   .quote-container{
     background: url("../assets/images/testimonials_home_1_bg.jpg") center;
+    background-size: cover;
     position: relative;
     padding: 75px 50px 100px;
     width: 100%;
