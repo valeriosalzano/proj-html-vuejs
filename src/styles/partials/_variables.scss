@@ -15,13 +15,29 @@ $Nevada: #54686c;
 $btn-blue-bg: #427ed5;
 $btn-blue-text: #fff;
 
-$btn-transparent-bg: transparent;
+$btn-transparent-bg: rgba(255,255,255,0.15);
 $btn-transparent-text: #fff;
 $btn-transparent-border: #fff;
 
+$header-top: #a0a5a5;
+$header-top-dark: #54686c;
+$header-bottom: #54686c;
+$header-bottom-hover: #427ed1;
+
 $jumbo-text: #fff;
 
+$section-title: #2a2f33;
+$section-subtitle: #54686c;
+
 $gray-line: #a0a5a5;
+$light-gray-line:#eaeaea;
+
+$light-gray-bg: #fafafa;
+$white-bg: #fff;
+
+$featured-title: #2a2f33;
+$featured-tags: #54686c;
+$featured-price: #427ed5;
 
 $collections-text: #fff;
 
@@ -35,4 +51,3 @@ $cta-title: #fff;
 $footer-primary-dark: #1d1f22;
 $footer-primary: #2b2e32;
 $footer-primary-light: #303337;
-

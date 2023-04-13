@@ -203,6 +203,24 @@ export const store = reactive({
       comments: 0,
       text: 'Donec finibus sit amet orci eget ultricies. Praesent posuere ante ut erat fringilla,',
       img: 'post_img_10-700x441.jpg'
+    },{
+      title: 'Aliquam posuere magna eget nibh',
+      date: 'September 9th, 2015',
+      comments: 0,
+      text: 'Donec finibus sit amet orci eget ultricies. Praesent posuere ante ut erat fringilla,',
+      img: 'post_img_10-700x441.jpg'
+    },{
+      title: 'Cras ac nulla ac consecte rutrum',
+      date: 'September 9th, 2015',
+      comments: 0,
+      text: 'Donec finibus sit amet orci eget ultricies. Praesent posuere ante ut erat fringilla,',
+      img: 'post_img_10-700x441.jpg'
+    },{
+      title: 'Fusce mattis nunc ut aliquam',
+      date: 'September 9th, 2015',
+      comments: 0,
+      text: 'Donec finibus sit amet orci eget ultricies. Praesent posuere ante ut erat fringilla,',
+      img: 'post_img_10-700x441.jpg'
     },
   ]
 })

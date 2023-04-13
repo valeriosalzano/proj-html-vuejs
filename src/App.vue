@@ -1,6 +1,7 @@
 <script>
 import {store} from './store/store.js';
 
+
 import PageHeader from './components/PageHeader.vue';
 import PageMain from './components/PageMain.vue';
 import PageFooter from './components/PageFooter.vue';
@@ -29,7 +30,10 @@ export default {
     :posts="store.blogData">
   </PageMain>
   
-  <PageFooter></PageFooter>
+  <PageFooter
+    :products="store.productsData"
+    :posts="store.blogData">
+  </PageFooter>
 </template>
 
 <style lang="scss">

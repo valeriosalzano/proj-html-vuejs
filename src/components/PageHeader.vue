@@ -1,8 +1,10 @@
 <template>
   <header class="page-header">
-    <div class="header-top container">
-      <SocialsList></SocialsList>
-      <NavBar :navData="userNavBar"></NavBar>
+    <div class="header-top">
+      <div class="container">
+        <SocialsList></SocialsList>
+        <NavBar :navData="userNavBar"></NavBar>
+      </div>
     </div>
     <div class="header-bottom container">
 
@@ -79,15 +81,39 @@ import OneButton from './OneButton.vue';
 </script>
 
 <style lang="scss" scoped>
-.header-top,
-.header-bottom {
+@use '../styles/partials/variables' as *;
+
+.header-top .container, .header-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
+}
+.header-top {
+  height: 50px;
+  border-bottom: 1px solid $light-gray-line;
+  .socials-list{
+    color: $header-top-dark;
+    font-size: 0.9rem;
+  }
 }
 
-.header-bottom .right-side {
-  display: flex;
-  align-items: center;
+.header-bottom {
+  height: 100px;
+  .left-side {
+    height: 50px;
+    img {
+      height: 100%;
+    }
+  }
+  .right-side {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    i {
+      font-size: 0.8rem;
+      margin-left: 1rem;
+    }
+  }
 }
 </style>

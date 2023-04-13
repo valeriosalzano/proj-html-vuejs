@@ -2,14 +2,14 @@
   <main class="page-main">
     <MainJumbotron></MainJumbotron>
 
-    <section id="featured-products">
+    <section id="featured-products" class="spaced">
       <div class="container">
         <SectionTitle>
           <template #default>Featured Products</template>
           <template #subtitle>Must have products from our top sellers</template>
         </SectionTitle>
         <div class="categories-filter">
-          <div v-for="category in featuredCategories" @click="setCategory(category)" :key="category">{{ category }}</div>
+          <div v-for="(category,index) in featuredCategories" @click="setCategory(category)" :key="category" :class="selectedCategory==category?'selected':''">{{ category }}</div>
         </div>
         <div class="featured-cards">
           <ProductCard v-for="product in getFeaturedProducts" :product="product" :key="product.name"></ProductCard>
@@ -25,7 +25,7 @@
       </div>
     </section>
 
-    <section id="best-sellers">
+    <section id="best-sellers" class="spaced">
       <div class="container">
         <SectionTitle>
           <template #default>Best Seller</template>
@@ -52,7 +52,7 @@
       </div>
     </section>
 
-    <section id="new-arrivals">
+    <section id="new-arrivals" class="spaced">
       <div class="container">
         <SectionTitle>
           <template #default>New Arrivals</template>
@@ -66,14 +66,14 @@
       <OneSlider :people="people"></OneSlider>
     </section>
     
-    <section id="blog">
+    <section id="blog" class="spaced">
       <div class="container">
         <SectionTitle>
           <template #default>From Our blog</template>
           <template #subtitle>The latest Classic Shop news</template>
         </SectionTitle>
         <div class="post-list">
-          <div v-for="post in posts" class="post">
+          <div v-for="post in posts.slice(0,3)" class="post">
             <img :src="getImgPath(post.img)" alt="image from our blog">
             <h2>{{ post.title }}</h2>
             <p class="post-infos">{{ post.date }} | {{ post.comments }} Comments</p>
@@ -211,16 +211,29 @@
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
+
+section.spaced {
+  padding: 100px 0 150px;
+}
+
 #featured-products {
   .categories-filter{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: $section-title;
+    margin-bottom: 2rem;
 
     div {
-      padding: 20px 50px;
-      border: 1px solid gray;
+      padding: 1rem 3.5rem;
+      border: 1px solid $light-gray-line;
+      background-color: $light-gray-bg;
       text-transform: capitalize;
+      &.selected{
+        background-color: $white-bg;
+      }
     }
   }
   .featured-cards {

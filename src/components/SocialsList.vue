@@ -17,4 +17,5 @@
 i:not(:first-of-type) {
   margin-left: 1rem;
 }
+
 </style>

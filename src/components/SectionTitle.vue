@@ -16,12 +16,16 @@
 
 .section-title {
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 h2 {
+  font-size: 2.8rem;
   display: flex;
   align-items: center;
   gap: 2rem;
+  color: $section-title;
+  margin-bottom: 1rem;
 
   &::before,&::after {
     content: '';
@@ -30,7 +34,12 @@ h2 {
     vertical-align: middle;
     flex-grow: 1;
     border-radius: 1rem;
-    background-color: $gray-line;
+    background-color: $light-gray-line;
   }
 }
+h3 {
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: $section-subtitle;
+  }
 </style>
