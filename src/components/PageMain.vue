@@ -86,10 +86,12 @@
     <div class="main-bottom">
       <section id="products-lists">
         <div class="container">
-          <div v-for="list in productsListsData" class="list">
+          <div v-for="(list,index) in productsListsData" class="list">
             <h1>{{ list.title}}</h1>
             <ul>
-              <li v-for="product in list.elements"><ProductCard :product="product" :compact="true"></ProductCard></li>
+              <li v-for="product in list.elements" :key="product.name">
+                <ProductCard :product="product" :compact="true" :reviews="index == 3"></ProductCard>
+              </li>
             </ul>
           </div>
         </div>

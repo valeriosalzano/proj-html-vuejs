@@ -1,18 +1,20 @@
 <template>
-  <footer class="page-footer">
+  <footer id="page-footer">
     <CallToAction></CallToAction>
     <div class="footer-top">
       <div class="container">
-        <div class="col">
-          <img src="../assets/images/classic_shop_logo2x.png" alt="shop logo">
-          <p>12345 North Main Stree,</p>
-          <p>New York, NY 555555</p>
-          <p>Phone: 1.800.555.6789</p>
-          <p>Email: info@company.com</p>
-          <p>Web: Theme-fusion.com</p>
+        <div class="col company">
+          <img class="logo" src="../assets/images/classic_shop_logo2x.png" alt="shop logo">
+          <div class="company-info">
+            <p>12345 North Main Stree,</p>
+            <p>New York, NY 555555</p>
+            <p>Phone: 1.800.555.6789</p>
+            <p>Email: info@company.com</p>
+            <p>Web: Theme-fusion.com</p>
+          </div>
           <SocialsList></SocialsList>
         </div>
-        <div class="col">
+        <div class="col top-rated">
           <h3>top rated products</h3>
           <ul>
             <li v-for="product in getTopRated.slice(0,3)">
@@ -20,7 +22,7 @@
             </li>
           </ul>
         </div>
-        <div class="col">
+        <div class="col posts">
           <h3>recent posts</h3>
           <ul>
             <li v-for="post in posts">
@@ -28,7 +30,8 @@
             </li>
           </ul>
         </div>
-        <div class="tags col">
+        <div class="col tags">
+          <h3> tags </h3>
           <span v-for="tag in tags"> {{ tag }} </span> 
         </div>
       </div>
@@ -98,10 +101,45 @@ import ProductCard from './ProductCard.vue';
 @use '../styles/partials/variables' as *;
 .footer-top {
   background-color: $footer-primary ;
+  padding: 60px 0;
   .container {
     display: flex;
+    justify-content: space-between;
+    .logo {
+      filter:brightness(9999);
+      max-width: 170px;
+      margin-bottom: 50px;
+    }
     .col {
       width: calc(100% / 4 - 1rem);
+      color: $footer-text;
+      h3 {
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+      }
+    }
+    .company-info {
+      line-height: 1.8rem;
+      margin-bottom: 50px;
+    }
+    .posts {
+      li {
+        padding: 0.9rem 0;
+        border-bottom: 1px solid $gray-line;
+        i {
+          font-size: 0.6rem;
+          margin-right: 0.25rem;
+        }
+      }
+    }
+    .tags {
+      span {
+        display: inline-block;
+        padding: 0.5rem;
+        margin: 0.1rem;
+        border: 1px solid $gray-line;
+      }
     }
   }
 }

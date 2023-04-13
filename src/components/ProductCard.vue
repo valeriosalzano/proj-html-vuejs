@@ -9,8 +9,9 @@
       <div v-if="compact && product.reviews.length" v-show="getAverageRating(product)" class="stars">
         <i v-for="n in 5" class="fa-star" :class="n <= Math.ceil(getAverageRating(product))? 'fa-solid':'fa-regular'"></i>
       </div>
-      <span class="original-price" :class="product.discount? 'erased' : ''"> ${{ product.price }} </span>
-      <span class="discounted-price" v-if="product.discount"> ${{ product.price - product.discount }} </span>
+      <span v-if="reviews">by {{ product.reviews[0].author }}</span>
+      <span v-if="!reviews" class="original-price" :class="product.discount? 'erased' : ''"> ${{ product.price }} </span>
+      <span v-if="product.discount && !reviews" class="discounted-price" > ${{ product.price - product.discount }} </span>
     </div>
   </div>
 </template>
@@ -21,6 +22,7 @@
     props: {
     product: Object,
     compact: Boolean,
+    reviews: Boolean,
     },
     methods: {
       getImgPath(img){
@@ -85,6 +87,19 @@ h5 {
       object-fit: cover;
       width: 100%;
     }
+  }
+  
+}
+#page-footer .product-card.compact {
+  border-bottom: 1px solid $gray-line;
+  .product-infos{
+    h3, .original-price, .discounted-price {
+      color: $footer-text;
+    }
+    .original-price.erased::after {
+      background-color: white;
+    }
+    
   }
   
 }
