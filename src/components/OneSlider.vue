@@ -1,5 +1,5 @@
 <template>
-  <!-- products version -->
+  <!-- PRODUCTS VERSION-->
   <div v-if="products" class="one-slider">
     <span class="arrow left"><i class="fa-solid fa-chevron-left"></i></span>
     <div v-for="product in products" class="img-container" :key="product.name">
@@ -8,7 +8,7 @@
     </div>
     <span class="arrow right"><i class="fa-solid fa-chevron-right"></i></span>
   </div>
-  <!-- testimonials version -->
+  <!-- TESTIMONIALS VERSION -->
   <div v-if="people" class="one-slider" :class="people?'people':''">
     <div class="quote-container">
       <img :src="getImgPath(people[personShowing].img)" :alt="people[personShowing].name">
@@ -48,6 +48,8 @@ import ImgHover from './ImgHover.vue';
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
+
+// GENERIC STYLE
 .one-slider {
   position: relative;
   width: 100%;
@@ -60,6 +62,8 @@ import ImgHover from './ImgHover.vue';
       width: 100%;
     }
   }
+
+  // PRODUCTS VERSION STYLE 
   .arrow {
     cursor: pointer;
     position: absolute;
@@ -78,6 +82,8 @@ import ImgHover from './ImgHover.vue';
     }
   }
 }
+
+// TESTIMONIALS VERSION STYLE
 .one-slider.people {
   background: url("../assets/images/testimonials_home_1_bg.jpg") center;
   background-position-y: -350px ;

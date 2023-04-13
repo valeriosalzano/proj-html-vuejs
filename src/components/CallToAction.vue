@@ -1,12 +1,14 @@
 <template>
   <div class="call-to-action">
     <div class="container">
+
       <i class="fa-regular fa-envelope"></i>
       <h1>Subscribe now and get special offers</h1>
       <div class="input-group">
         <input type="email" placeholder="Insert your email">
         <OneButton class="blue btn">SEND</OneButton>
       </div>
+      
     </div>
   </div>
 </template>

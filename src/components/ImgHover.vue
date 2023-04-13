@@ -1,5 +1,6 @@
 <template>
   <div class="img-hover">
+
     <div v-show="!checked" class="product-info">
       <h2>{{ product.name }}</h2>
       <h4>{{ product.tags.join(', ') }}</h4>
@@ -7,9 +8,11 @@
       <button type="button" class="cart btn" @click.stop="toggleChecked"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
       <button type="button" class="details btn"><i class="fa-solid fa-list"></i> Details</button>
     </div>
+
     <div v-show="checked" class="product-checked">
       <i class="fa-regular fa-square-check check" @click.stop="toggleChecked"></i>
     </div>
+
   </div>
 </template>
 
@@ -50,6 +53,7 @@
     filter: opacity(1);
   }
 }
+// FIRST LAYER STYLE
 .product-info {
   height: 100%;
   position: relative;
@@ -71,6 +75,8 @@
     font-weight: 400;
   }
 }
+
+// SECOND LAYER STYLE
 .product-checked {
   height: 100%;
   position: relative;
@@ -88,6 +94,8 @@
 
   }
 }
+
+// BTNS STYLE
 .btn {
   cursor: pointer;
   position: absolute;

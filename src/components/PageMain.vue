@@ -1,7 +1,9 @@
 <template>
   <main class="page-main">
+
     <MainJumbotron></MainJumbotron>
 
+    <!-- FEATURED PRODUCTS -->
     <section id="featured-products" class="spaced">
       <div class="container">
         <SectionTitle>
@@ -12,11 +14,12 @@
           <div v-for="(category,index) in featuredCategories" @click="setCategory(category)" :key="category" :class="selectedCategory==category?'selected':''">{{ category }}</div>
         </div>
         <div class="featured-cards">
-          <ProductCard v-for="product in getFeaturedProducts" :product="product" :key="product.name"></ProductCard>
+          <ProductCard v-for="product in getFeaturedProducts.slice(0,4)" :product="product" :key="product.name"></ProductCard>
         </div>
       </div>
     </section>
 
+    <!-- COLLECTIONS -->
     <section id="collections">
       <div v-for="element in collectionsData" :style='`background-image: url(" ${getImgPath(element.img)}")`'>
         <h2>{{ element.title }} collection</h2>
@@ -25,16 +28,18 @@
       </div>
     </section>
 
+    <!-- BEST SELLERS -->
     <section id="best-sellers" class="spaced">
       <div class="container">
         <SectionTitle>
           <template #default>Best Seller</template>
           <template #subtitle>Must have products from our top sellers</template>
         </SectionTitle>
-        <OneSlider :products="getBestSellers"></OneSlider>
+        <OneSlider :products="getBestSellers.slice(0,5)"></OneSlider>
       </div>
     </section>
 
+    <!-- PROMO -->
     <section id="promo">
       <div class="bg-wrapper">
         <div class="container">
@@ -52,6 +57,7 @@
       </div>
     </section>
 
+    <!-- NEW ARRIVALS  -->
     <section id="new-arrivals" class="spaced">
       <div class="container">
         <SectionTitle>
@@ -62,10 +68,12 @@
       <OneSlider :products="products.slice(0,5)"></OneSlider>
     </section>
 
+    <!-- TESTIMONIALS -->
     <section id="testimonials">
       <OneSlider :people="people"></OneSlider>
     </section>
     
+    <!-- BLOG -->
     <section id="blog" class="spaced">
       <div class="container">
         <SectionTitle>
@@ -83,7 +91,9 @@
       </div>
     </section>
 
+    <!-- MAIN BOTTOM -->
     <div class="main-bottom">
+
       <section id="products-lists">
         <div class="container">
           <div v-for="(list,index) in productsListsData" class="list">
@@ -96,7 +106,9 @@
           </div>
         </div>
       </section>
+      
       <BrandsList></BrandsList>
+
     </div>
     
   </main>
@@ -152,7 +164,7 @@
       getFeaturedProducts(){
         let filteredProducts = [];
         this.products.forEach(product => {
-          if(product.tags.includes(this.selectedCategory) && filteredProducts.length<4){
+          if(product.tags.includes(this.selectedCategory)){
             filteredProducts.push(product)
             }
         });
@@ -161,7 +173,7 @@
       getBestSellers(){
         let sortedArray = [...this.products];
         sortedArray.sort((a,b) => b.sold - a.sold);
-        return sortedArray.slice(0,5);
+        return sortedArray
       },
       getDiscountedProducts(){
         let discountedProducts = [];
@@ -220,6 +232,7 @@ section.spaced {
   padding: 100px 0 150px;
 }
 
+// FEATURE PRODUCTS STYLE
 #featured-products {
   .categories-filter{
     display: flex;
@@ -247,6 +260,8 @@ section.spaced {
     }
   }
 }
+
+// COLLECTIONS STYLE
 #collections {
   text-align: center;
   color: $collections-text;
@@ -269,6 +284,8 @@ section.spaced {
     margin-bottom: 2rem;
   }
 }
+
+// PROMO STYLE
 #promo {
   padding: 90px 0;
   background-color: #f4f8f9;
@@ -303,6 +320,8 @@ section.spaced {
     background-image: url("../assets/images/promo_box_2_bg.jpg");
   }
 }
+
+// TESTIMONIALS
 #testimonials {
   color: $testimonials-text;
 }
@@ -335,6 +354,8 @@ section.spaced {
     }
   }
 }
+
+// MAIN BOTTOM STYLE
 .main-bottom {
   border-top: 2px solid $light-gray-line;
   padding-top: 60px;

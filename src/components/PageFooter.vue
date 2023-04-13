@@ -1,6 +1,9 @@
 <template>
   <footer id="page-footer">
+
     <CallToAction></CallToAction>
+
+    <!-- FOOTER TOP -->
     <div class="footer-top">
       <div class="container">
         <div class="col company">
@@ -36,6 +39,8 @@
         </div>
       </div>
     </div>
+
+    <!-- FOOTER BOTTOM  -->
     <div class="footer-bottom">
       <p>&copy; Copyright 2012-2020 | Avada Theme by Theme Fusion | All Rights Reserved | Powered by WordPress</p>
       <img src="../assets/images/payment_cards_footer.png" alt="">
@@ -116,6 +121,8 @@ import ProductCard from './ProductCard.vue';
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
+
+// FOOTER TOP STYLE
 .footer-top {
   background-color: $footer-primary ;
   padding: 60px 0;
@@ -162,6 +169,8 @@ import ProductCard from './ProductCard.vue';
     }
   }
 }
+
+// FOOTER BOTTOM STYLE
 .footer-bottom {
   padding: 2rem 0 0.5rem;
   text-align: center;

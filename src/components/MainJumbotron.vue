@@ -1,11 +1,15 @@
 <template>
   <div class="main-jumbotron">
+
     <h1>Brand New Arrivals</h1>
+
     <h2>NEW COLLECTION FROM NEW YORK</h2>
+
     <div>
       <OneButton class="transparent big">VIEW ALL</OneButton>
       <OneButton class="transparent big">LOOKBOOK</OneButton>
     </div>
+
     <div class="squares">
       <div class="demos square">
         <i class="fa-solid fa-images"></i>
@@ -16,6 +20,7 @@
         On Sale
       </div>
     </div>
+
   </div>
 </template>
 
@@ -58,6 +63,8 @@ import OneButton from './OneButton.vue';
     font-weight: 300;
     margin-bottom: 2rem;
   }
+
+  // SQUARES STYLE
   .squares {
     position: absolute;
     top: -10px;
@@ -72,24 +79,26 @@ import OneButton from './OneButton.vue';
       border-radius: 8px;
       box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3);
       text-align: center;
-    }
-  }
-  .demos {
-    i {
-      font-size: 1.8rem;
-      margin: 0.25rem;
-    }
-  }
-  .sale {
-    p {
-      vertical-align:super;
-      color: #66bd7c;
-      font-size: 2.2rem;
-      font-weight: 500;
-      sup {
-        font-size: 1rem;
+
+      &.demos {
+        i {
+          font-size: 1.8rem;
+          margin: 0.25rem;
+        }
+      }
+      &.sale {
+        p {
+          vertical-align:super;
+          color: #66bd7c;
+          font-size: 2.2rem;
+          font-weight: 500;
+          sup {
+            font-size: 1rem;
+          }
+        }
       }
     }
   }
+  
 }
 </style>

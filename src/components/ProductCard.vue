@@ -1,5 +1,7 @@
 <template>
+
   <div class="product-card" :class="compact? 'compact':'large'">
+
     <div class="img-container">
       <img :src="getImgPath(product.img)" :alt="product.name">
       <ImgHover v-if="!compact" :product="product"></ImgHover>
@@ -14,6 +16,7 @@
       <span v-if="!reviews" class="original-price" :class="product.discount? 'erased' : ''"> ${{ product.price }} </span>
       <span v-if="product.discount && !reviews" class="discounted-price" > ${{ product.price - product.discount }} </span>
     </div>
+
   </div>
 </template>
 
@@ -50,6 +53,8 @@ import ImgHover from './ImgHover.vue';
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
+
+// GENERIC STYLE
 h3 {
   text-transform: capitalize;
   color: $featured-title;
@@ -86,6 +91,8 @@ h5 {
     background-color: black;
   }
 }
+
+// LARGE CARD STYLE
 .product-card.large {
   .img-container {
     position: relative;
@@ -97,19 +104,8 @@ h5 {
   }
   
 }
-#page-footer .product-card.compact {
-  border-bottom: 1px solid $gray-line;
-  .product-infos{
-    h3, .original-price, .discounted-price {
-      color: $footer-text;
-    }
-    .original-price.erased::after {
-      background-color: white;
-    }
-    
-  }
-  
-}
+
+// COMPACT CARD STYLE
 .product-card.compact {
   display: flex;
   flex-direction: row-reverse;
@@ -144,6 +140,19 @@ h5 {
     }
     .discounted-price {
       text-decoration: underline;
+    }
+  }
+}
+
+// COMPACT CARD STYLE - FOOTER 
+#page-footer .product-card.compact {
+  border-bottom: 1px solid $gray-line;
+  .product-infos{
+    h3, .original-price, .discounted-price {
+      color: $footer-text;
+    }
+    .original-price.erased::after {
+      background-color: white;
     }
   }
 }
