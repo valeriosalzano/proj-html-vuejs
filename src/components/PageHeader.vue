@@ -77,7 +77,7 @@ import OneButton from './OneButton.vue';
         ]
       }
     },
-}
+  }
 </script>
 
 <style lang="scss" scoped>

@@ -41,7 +41,7 @@ import OneButton from './OneButton.vue';
       .input-group {
         margin-left: 2rem;
         input {
-          min-width: 280px;
+          min-width: 250px;
           border-radius: 1rem;
           padding: 0.6rem;
           border: none;
